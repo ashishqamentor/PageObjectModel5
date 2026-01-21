@@ -19,12 +19,14 @@ import org.testng.annotations.BeforeTest;
 
 import Pages.checkoutclass;
 import Pages.dashboard;
+import Pages.loginPage;
 
 public class Baseclass 
 {
 	public WebDriver w ;
 	public dashboard d;
 	public checkoutclass c;
+	public loginPage l;
 	
 	@BeforeTest
 	public void launch() throws Exception
@@ -56,6 +58,7 @@ public class Baseclass
 		
 		d = new dashboard(w);
 		c = new checkoutclass(w);
+		l = new loginPage(w);
 	}
 
 	
@@ -70,9 +73,7 @@ public class Baseclass
 		{
 			XSSFRow row =sh.getRow(i+1);
 			XSSFCell vegcell = row.getCell(0);
-			veglist = veglist + vegcell.getStringCellValue()+"," ; // veglist = broco, 
-															// veglist =  broco, brinjal ,
-					
+			veglist = veglist + vegcell.getStringCellValue()+"," ; // veglist = broco, 	
 		}
 		
 		return veglist;	 

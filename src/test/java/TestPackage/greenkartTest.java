@@ -18,7 +18,7 @@ public class greenkartTest extends Baseclass
 			d.addtokart(vegname);
 		}
 		c.checkout(promo,country);
-		assertTrue(false);
+	
 	}	
 }
 

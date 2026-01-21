@@ -2,6 +2,8 @@ package TestPackage;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -36,9 +38,14 @@ public class listen extends Baseclass implements ITestListener
 			
 			w =(WebDriver) result.getTestClass().getRealClass().getField("w").get(result.getInstance());
 			
+			DateTimeFormatter formatter =  DateTimeFormatter.ofPattern("dd_MM_YYYY_HH_mm_ss");
+
+	        String dateTime = LocalDateTime.now().format(formatter);
+	        String testname = result.getMethod().getMethodName();
+			
 			TakesScreenshot tc = (TakesScreenshot) w;
 			File src = tc.getScreenshotAs(OutputType.FILE);
-			File dest = new File("./screenshot/greenkart.png");
+			File dest = new File("./screenshot/"+testname+"_"+dateTime+".png");
 			Files.copy(src, dest);
 		} 
 		catch (Exception e) 
@@ -57,12 +64,18 @@ public class listen extends Baseclass implements ITestListener
 		// screenshot
 		System.out.println("test fail");
 		
-		try {
+		try {			
+			
 			w =(WebDriver) result.getTestClass().getRealClass().getField("w").get(result.getInstance());
+			
+			DateTimeFormatter formatter =  DateTimeFormatter.ofPattern("dd_MM_YYYY_HH_mm_ss");
+
+	        String dateTime = LocalDateTime.now().format(formatter);
+	        String testname = result.getMethod().getMethodName();
 			
 			TakesScreenshot tc = (TakesScreenshot) w;
 			File src = tc.getScreenshotAs(OutputType.FILE);
-			File dest = new File("./screenshot/greenkart.png");
+			File dest = new File("./screenshot/"+testname+"_"+dateTime+".png");
 			Files.copy(src, dest);
 		} 
 		catch (Exception e) 
