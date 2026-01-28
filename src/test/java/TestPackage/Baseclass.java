@@ -17,6 +17,9 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+
 import Pages.checkoutclass;
 import Pages.dashboard;
 import Pages.loginPage;
@@ -60,7 +63,6 @@ public class Baseclass
 		c = new checkoutclass(w);
 		l = new loginPage(w);
 	}
-
 	
 	public String excelDataRead() throws Exception
 	{
@@ -83,8 +85,17 @@ public class Baseclass
 	{ 
 		w.get(url);
 	}
-	
-	
+
+
+ 	public ExtentReports extentreportObj()
+ 	{
+ 		ExtentSparkReporter reporter = new ExtentSparkReporter("./Report/testreport.html");
+ 		ExtentReports extent = new ExtentReports();
+ 		extent.attachReporter(reporter);
+ 		return extent;
+ 		
+ 	}
+ 	
  	@AfterTest
 	public void terminate()
 	{

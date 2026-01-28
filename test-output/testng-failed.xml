@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+<suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <listeners>
     <listener class-name="TestPackage.listen"/>
   </listeners>
-  <test thread-count="5" name="Test(failed)">
-    <parameter name="promo" value="discount50%"/>
-    <parameter name="country" value="Japan"/>
-    <parameter name="url" value="https://rahulshettyacademy.com/seleniumPractise/#/"/>
+  <test thread-count="5" parallel="tests" name="login(failed)">
     <classes>
-      <class name="TestPackage.greenkartTest">
+      <class name="TestPackage.login">
         <methods>
           <include name="launch"/>
-          <include name="checkoutTest" invocation-numbers="0"/>
           <include name="terminate"/>
+          <include name="login" invocation-numbers="1"/>
         </methods>
-      </class> <!-- TestPackage.greenkartTest -->
+      </class> <!-- TestPackage.login -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- login(failed) -->
 </suite> <!-- Failed suite [Suite] -->
