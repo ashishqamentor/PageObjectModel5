@@ -68,7 +68,7 @@ public class listen extends Baseclass implements ITestListener
 			e.printStackTrace();
 		}
 		
-		thread.get().pass("test pass successfuuly");
+		thread.get().pass("test pass successfully");
 		extent.flush();
 		
 	}

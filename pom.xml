@@ -53,4 +53,51 @@
 	</dependencies>
 
 
+	<profiles>
+
+		<profile>
+			<id>login</id>
+			<build>
+				<pluginManagement>
+					<plugins>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-surefire-plugin</artifactId>
+							<version>3.5.4</version>
+							<configuration>
+								<suiteXmlFiles>
+									<suiteXmlFile>login.xml</suiteXmlFile>
+								</suiteXmlFiles>
+							</configuration>
+						</plugin>
+					</plugins>
+				</pluginManagement>
+			</build>
+		</profile>
+
+
+		<profile>
+			<id>greenkart</id>
+			<build>
+				<pluginManagement>
+					<plugins>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-surefire-plugin</artifactId>
+							<version>3.5.4</version>
+							<configuration>
+								<suiteXmlFiles>
+									<suiteXmlFile>greenkart.xml</suiteXmlFile>
+								</suiteXmlFiles>
+							</configuration>
+						</plugin>
+					</plugins>
+				</pluginManagement>
+			</build>
+		</profile>
+
+
+	</profiles>
+
+
 </project>
