@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestPackage.login">
+      <class name="greenkartcucumber.testrunner">
         <methods>
-          <include name="launch"/>
-          <include name="terminate"/>
-          <include name="login"/>
+          <include name="setUpClass"/>
+          <include name="tearDownClass"/>
+          <include name="runScenario" invocation-numbers="0"/>
         </methods>
-      </class> <!-- TestPackage.login -->
+      </class> <!-- greenkartcucumber.testrunner -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

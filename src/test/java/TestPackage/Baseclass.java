@@ -14,6 +14,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
@@ -31,7 +32,7 @@ public class Baseclass
 	public checkoutclass c;
 	public loginPage l;
 	
-	@BeforeTest
+	//@BeforeTest
 	public void launch() throws Exception
 	{
 		FileInputStream fis = new FileInputStream("./Data/config.properties");
@@ -83,6 +84,7 @@ public class Baseclass
 	
  	public void openUrl(String url) throws Exception
 	{ 
+ 		launch();
 		w.get(url);
 	}
 
@@ -96,7 +98,7 @@ public class Baseclass
  		
  	}
  	
- 	@AfterTest
+ 	@AfterMethod
 	public void terminate()
 	{
 		w.quit();
