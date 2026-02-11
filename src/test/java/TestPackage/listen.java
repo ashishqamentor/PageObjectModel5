@@ -49,7 +49,6 @@ public class listen extends Baseclass implements ITestListener
 			w =(WebDriver) result.getTestClass().getRealClass().getField("w").get(result.getInstance());
 			
 			DateTimeFormatter formatter =  DateTimeFormatter.ofPattern("dd_MM_YYYY_HH_mm_ss");
-
 	        String dateTime = LocalDateTime.now().format(formatter);
 	        String testname = result.getMethod().getMethodName();
 			
